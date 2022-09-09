@@ -10,12 +10,19 @@ import TrackDetailScreen from './screens/TrackDetailScreen';
 import TrackListScreen from './screens/TrackListScreen';
 
 const App = () => (
-  <View style={[styles.container, styles.horizontal]}>
-    <ActivityIndicator />
-    <ActivityIndicator size="large" />
-    <ActivityIndicator size="small" color="#0000ff" />
-    <ActivityIndicator size="large" color="#00ff00" hidesWhenStopped />
-  </View>
+  <>
+    <TrackListScreen />
+    {/* <TrackDetailScreen /> */}
+    {/* <TrackCreateScreen /> */}
+    {/* <SigninScreen /> */}
+    {/* <SignupScreen /> */}
+  </>
+  // <View style={[styles.container, styles.horizontal]}>
+  //   <ActivityIndicator />
+  //   <ActivityIndicator size="large" />
+  //   <ActivityIndicator size="small" color="#0000ff" />
+  //   <ActivityIndicator size="large" color="#00ff00" hidesWhenStopped />
+  // </View>
 );
 
 const styles = StyleSheet.create({
