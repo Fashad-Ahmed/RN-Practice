@@ -2,7 +2,9 @@ import React from 'react';
 import {ActivityIndicator, Button, StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+// import 'react-native-gesture-handler';
 // screens
 import SigninScreen from './screens/SigninScreen';
 import SignupScreen from './screens/SignupScreen';
@@ -11,10 +13,15 @@ import TrackCreateScreen from './screens/TrackCreateScreen';
 import TrackDetailScreen from './screens/TrackDetailScreen';
 import TrackListScreen from './screens/TrackListScreen';
 import NewScreen from './screens/NewScreen';
+import Home from './screens/home';
+import Welcome from './screens/welcome';
+import AddTask from './screens/addTask';
 
 const Stack = createNativeStackNavigator();
+// const Stack = createBottomTabNavigator();
+// const Stack = createDrawerNavigator();
 
-const Home = ({navigation}) => {
+const OldHome = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Button
@@ -66,15 +73,21 @@ const Home = ({navigation}) => {
 const App = () => (
   <>
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="AddTask" component={AddTask} />
+        {/* <Stack.Screen name="OldHome" component={OldHome} />
         <Stack.Screen name="Home0" component={SigninScreen} />
         <Stack.Screen name="Home1" component={SignupScreen} />
         <Stack.Screen name="Home2" component={AccountScreen} />
         <Stack.Screen name="Home3" component={TrackCreateScreen} />
         <Stack.Screen name="Home4" component={TrackDetailScreen} />
         <Stack.Screen name="Home5" component={TrackListScreen} />
-        <Stack.Screen name="Home6" component={NewScreen} />
+        <Stack.Screen name="Home6" component={NewScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
 
